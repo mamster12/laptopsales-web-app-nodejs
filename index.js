@@ -11,7 +11,7 @@ const server = http.createServer((req, res) => {
     const id = url.parse(req.url, true).query.id;
 
     // Products Route
-    if (pathName === '/products') {
+    if (pathName === '/products' || pathName === '/') {
         res.writeHead(200, { 'Content-type': 'text/html' });
         fs.readFile(`${__dirname}/templates/template-overview.html`, 'utf-8', (err, data) => {
 
